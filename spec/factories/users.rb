@@ -6,5 +6,9 @@ FactoryGirl.define do
     trait :no_password do
       password { }
     end
+
+    trait :no_email do
+      email { }
+    end
   end
 end

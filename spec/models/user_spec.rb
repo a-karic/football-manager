@@ -17,6 +17,7 @@ RSpec.describe User, type: :model do
       end
       context 'false' do
         it { expect(build(:user, :no_password)).not_to be_valid }
+        it { expect(build(:user, :no_email)).not_to be_valid }
       end
     end
   end
