@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
   before_action :check_if_logged_in, only: [:new, :create]
 
   def new
   end
 
   def create
-    @user = User.find_by(email: sessions_params[:email])
-    if @user && @user.authenticate(sessions_params[:password])
+    @user = User.find_by(email: session_params[:email])
+    if @user && @user.authenticate(session_params[:password])
       log_in @user
     else
       flash[:alert] = 'Wrong email or password'
@@ -22,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   private
-  def sessions_params
+  def session_params
     params.require(:session).permit(:email, :password)
   end
 

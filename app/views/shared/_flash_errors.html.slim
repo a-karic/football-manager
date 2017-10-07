@@ -1,2 +1,7 @@
-- flash.each do |key, value|
-  p #{value}
+- flash.each do |key, v|
+  ul
+    - if flash[key].kind_of?(String)
+      li #{v}
+    - else
+      - flash[key].each do |value|
+        li #{value}

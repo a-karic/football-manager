@@ -1,8 +1,8 @@
 module SessionsHelper
   def log_in(user)
     flash[:success] = 'You have successfully logged in'
-    session[:user_id] = @user.id
-    redirect_to root_path
+    session[:user_id] = user.id
+    redirect_to user_path(user)
   end
 
   def current_user

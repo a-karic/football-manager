@@ -22,3 +22,5 @@
 
 .byebug_history
 Guardfile
+tags
+coverage/

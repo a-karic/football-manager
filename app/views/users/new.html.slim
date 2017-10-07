@@ -1,0 +1,7 @@
+h1 Create a new account
+= form_with(model: @user, local: true) do |f|
+  = f.label :email
+  = f.text_field :email
+  = f.label :password
+  = f.password_field :password
+  = f.submit 'Submit'

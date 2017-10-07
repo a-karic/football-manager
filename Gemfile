@@ -9,8 +9,6 @@ gem 'slim'
 gem 'bcrypt', '~> 3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -41,7 +39,11 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.6'
+  #gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails.git', branch: 'master'
+  #%w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+  #  gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+  #end
   gem 'sqlite3'
 end
 
