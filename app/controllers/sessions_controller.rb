@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :check_if_logged_in, only: [:new, :create]
+  before_action :authorized?
 
   def new
   end
@@ -24,12 +24,4 @@ class SessionsController < ApplicationController
   def session_params
     params.require(:session).permit(:email, :password)
   end
-
-  def check_if_logged_in
-    if logged_in?
-      flash[:alert] = 'You are already logged in'
-      redirect_to root_path
-    end
-  end
-
 end

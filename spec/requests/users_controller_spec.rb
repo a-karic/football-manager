@@ -8,7 +8,18 @@ RSpec.describe UsersController, type: :request do
   end
 
   describe '.show' do
-    before { get user_path(user) }
+    before do
+      post sessions_path,
+        params:
+        {
+          session:
+          {
+            email: user.email,
+            password: user.password
+          }
+        }
+        get user_path(user)
+    end
     it { expect(response).to have_http_status(:ok) }
   end
 
