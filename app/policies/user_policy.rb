@@ -10,26 +10,11 @@ class UserPolicy
     current_user ? false : true
   end
 
-  alias :create? :new?
-
-  def settings?
-    current_user ? true : false
-  end
-
-  def update?
-    if current_user.id == params_id
-      true
-    else
-      false
-    end
-  end
-
   def show?
-    if current_user.id == params_id
-      true
-    else
-      false
-    end
+    current_user.id == params_id
   end
 
+  alias create? new?
+  alias edit? show?
+  alias update? show?
 end

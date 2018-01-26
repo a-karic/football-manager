@@ -4,11 +4,11 @@ FactoryGirl.define do
     password { Faker::Internet.password(8) }
 
     trait :no_password do
-      password { }
+      password nil
     end
 
     trait :no_email do
-      email { }
+      email nil
     end
   end
 end
