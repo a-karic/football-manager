@@ -7,3 +7,8 @@ h1 This is a Index page
   div You are not logged in
   div = link_to 'Log in', new_session_path
   div = link_to 'Create an account', new_user_path
+
+div data-controller='hello'
+  input data-target='hello.name' type='text'
+  button data-action='click->hello#greet' Greet
+  span data-target='hello.output'
