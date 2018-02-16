@@ -1,5 +1,5 @@
-h1 Login Page
-= form_with(scope: :session, url: sessions_path, method: :post) do |f|
+h1 Login Page123
+= form_with(scope: :session, url: sessions_path, method: :post, local: true) do |f|
   = f.label :email
   = f.text_field :email
   = f.label :password
