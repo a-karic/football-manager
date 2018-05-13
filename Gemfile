@@ -15,11 +15,13 @@ gem 'slim'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.2'
+gem 'devise'
+gem 'activeadmin'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
-  gem 'factory_girl_rails'
+  gem 'factory_bot'
   gem 'pry-rails'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.6'
