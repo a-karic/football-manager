@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20180514155938) do
     t.string "alpha2"
     t.string "alpha3"
     t.integer "numeric"
+    t.integer "currency_id"
+    t.string "flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,6 +86,8 @@ ActiveRecord::Schema.define(version: 20180514155938) do
     t.date "birth_date"
     t.string "birth_city"
     t.integer "language", default: 0
+    t.integer "country_id"
+    t.integer "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
@@ -93,8 +97,6 @@ ActiveRecord::Schema.define(version: 20180514155938) do
     t.string "email"
     t.string "nick"
     t.string "password_digest"
-    t.integer "country_id"
-    t.integer "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
