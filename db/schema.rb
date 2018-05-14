@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513172141) do
+ActiveRecord::Schema.define(version: 20180514155938) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -59,6 +59,19 @@ ActiveRecord::Schema.define(version: 20180513172141) do
     t.string "alpha2"
     t.string "alpha3"
     t.integer "numeric"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.string "symbol"
+    t.string "symbol_native"
+    t.string "name"
+    t.integer "decimal_digits"
+    t.string "code"
+    t.integer "rounding"
+    t.string "name_plural"
+    t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

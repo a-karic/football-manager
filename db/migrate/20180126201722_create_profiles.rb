@@ -8,6 +8,8 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.date :birth_date
       t.string :birth_city
       t.integer :language, default: 0
+      t.integer :country_id
+      t.integer :city_id
 
       t.timestamps
     end

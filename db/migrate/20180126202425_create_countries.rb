@@ -5,6 +5,8 @@ class CreateCountries < ActiveRecord::Migration[5.1]
       t.string :alpha2
       t.string :alpha3
       t.integer :numeric
+      t.integer :currency_id
+      t.string :flag
 
       t.timestamps
     end
