@@ -4,11 +4,11 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.belongs_to :user
       t.string :first_name
       t.string :last_name
-      t.string :image_url
+      t.string :photo
       t.date :birth_date
       t.string :birth_city
-      t.integer :language, default: 0
-      t.integer :country_id
+      t.belongs_to :language, foreign_key: true
+      t.belongs_to :country, foreign_key: true
       t.integer :city_id
 
       t.timestamps
