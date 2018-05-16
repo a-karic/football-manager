@@ -4,4 +4,6 @@ class Profile < ApplicationRecord
   belongs_to :country
   belongs_to :city, optional: true
   belongs_to :language, optional: true
+
+  mount_uploader :photo, AvatarUploader
 end

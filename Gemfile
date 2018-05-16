@@ -17,24 +17,26 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.2'
 gem 'devise'
 gem 'activeadmin'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'factory_bot'
+  gem 'faker'
   gem 'pry-rails'
-  gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.6'
+  gem 'selenium-webdriver'
+  gem 'sqlite3'
   #gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails.git', branch: 'master'
   #%w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
   #  gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
   #end
-  gem 'sqlite3'
 end
 
 group :test do
   gem 'codeclimate-test-reporter'
-  gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov'
 end

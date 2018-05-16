@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  include SessionsHelper
-  include PoliciesHelper
-  include Messages
+  # include SessionsHelper
+  # include PoliciesHelper
+  # include Messages
 end
