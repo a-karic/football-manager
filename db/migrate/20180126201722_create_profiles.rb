@@ -6,7 +6,6 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.string :photo
       t.date :birth_date
-      t.string :birth_city
       t.belongs_to :language, foreign_key: true
       t.belongs_to :country, foreign_key: true
       t.integer :city_id

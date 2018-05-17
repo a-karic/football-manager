@@ -60,7 +60,11 @@ ActiveRecord::Schema.define(version: 20180516165136) do
     t.string "alpha3"
     t.integer "numeric"
     t.integer "currency_id"
+    t.string "capital"
+    t.string "phone"
+    t.string "native"
     t.string "flag"
+    t.text "languages"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -140,7 +144,6 @@ ActiveRecord::Schema.define(version: 20180516165136) do
     t.string "last_name"
     t.string "photo"
     t.date "birth_date"
-    t.string "birth_city"
     t.integer "language_id"
     t.integer "country_id"
     t.integer "city_id"
