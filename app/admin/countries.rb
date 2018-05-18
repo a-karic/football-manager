@@ -17,7 +17,7 @@ ActiveAdmin.register Country do
     div for: country do
       h3 link_to country.name, admin_country_path(country)
       div link_to "#{country.currency.name}", admin_currency_path(country.currency) if country.currency
-      div "#{country.profiles.count} users"
+      div link_to "#{country.profiles.count} users", admin_profiles_path(country: country)
       div "#{country.football_clubs.count} clubs"
       div "#{country.football_leagues.count} leagues"
     end
