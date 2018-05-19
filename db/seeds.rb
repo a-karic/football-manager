@@ -8,3 +8,5 @@ Rake::Task['currencies:add_to_countries'].invoke
 Rake::Task['languages:create_languages'].invoke
 Rake::Task['users:create_test_users'].invoke
 Rake::Task['profiles:create_test_profiles'].invoke
+Rake::Task['football_leagues:create_leagues'].invoke
+Rake::Task['football_clubs:create_clubs'].invoke

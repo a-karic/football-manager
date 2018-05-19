@@ -10,6 +10,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.belongs_to :country, foreign_key: true
       t.integer :city_id
       t.integer :role, default: 0
+      t.integer :status, default: 0
 
       t.timestamps
     end

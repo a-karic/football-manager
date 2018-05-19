@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180516165136) do
+ActiveRecord::Schema.define(version: 20180519122342) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -83,12 +83,13 @@ ActiveRecord::Schema.define(version: 20180516165136) do
   end
 
   create_table "football_clubs", force: :cascade do |t|
+    t.integer "league_id"
+    t.string "code"
+    t.string "key"
+    t.string "logo"
     t.string "name"
-    t.integer "country_id"
-    t.text "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["country_id"], name: "index_football_clubs_on_country_id"
   end
 
   create_table "football_leagues", force: :cascade do |t|
@@ -98,36 +99,6 @@ ActiveRecord::Schema.define(version: 20180516165136) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_football_leagues_on_country_id"
-  end
-
-  create_table "football_players", force: :cascade do |t|
-    t.string "first_name"
-    t.string "middle_name"
-    t.string "last_name"
-    t.integer "age"
-    t.integer "club_id"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_football_players_on_club_id"
-  end
-
-  create_table "football_skills", force: :cascade do |t|
-    t.string "name"
-    t.integer "level"
-    t.integer "player_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_football_skills_on_player_id"
-  end
-
-  create_table "football_stadiums", force: :cascade do |t|
-    t.string "name"
-    t.integer "seats_number"
-    t.integer "club_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_football_stadiums_on_club_id"
   end
 
   create_table "languages", force: :cascade do |t|
@@ -147,6 +118,8 @@ ActiveRecord::Schema.define(version: 20180516165136) do
     t.integer "language_id"
     t.integer "country_id"
     t.integer "city_id"
+    t.integer "role", default: 0
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_profiles_on_country_id"

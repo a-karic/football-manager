@@ -12,6 +12,12 @@ ActiveAdmin.register Country do
   #   permitted
   # end
 
+  config.per_page = 15
+  filter :name
+  filter :alpha2
+  filter :alpha3
+  filter :capital
+  filter :currency
 
   index as: :grid, columns: 5 do |country|
     div for: country do
@@ -19,7 +25,8 @@ ActiveAdmin.register Country do
       div link_to "#{country.currency.name}", admin_currency_path(country.currency) if country.currency
       div link_to "#{country.profiles.count} users", admin_profiles_path(country: country)
       div "#{country.football_clubs.count} clubs"
-      div "#{country.football_leagues.count} leagues"
+      div link_to "#{country.football_leagues.count} leagues", admin_football_leagues_path(country: country)
+      div link_to "Staff", '#'
     end
 
   end

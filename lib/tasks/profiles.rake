@@ -12,7 +12,8 @@ namespace :profiles do
         country: country,
         birth_date: Faker::Date.birthday(12, 65),
         language: language,
-        remote_photo_url: "https://avatars.io/twitter/#{first_name}"
+        remote_photo_url: "https://avatars.io/twitter/#{first_name}",
+        status: ['pending', 'accepted'].sample
       )
     end
   end

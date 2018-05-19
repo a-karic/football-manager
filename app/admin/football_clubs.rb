@@ -1,4 +1,4 @@
-ActiveAdmin.register Football::League do
+ActiveAdmin.register Football::Club do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,10 +12,4 @@ ActiveAdmin.register Football::League do
 #   permitted
 # end
 
-  controller do
-    def scoped_collection
-      return Football::League.where(country: params[:country]) if params[:country]
-      Football::League.all
-    end
-  end
 end
