@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20180519224408) do
     t.integer "club_id"
     t.string "first_name"
     t.string "last_name"
+    t.string "photo"
     t.integer "salary"
     t.integer "value"
     t.integer "height"
