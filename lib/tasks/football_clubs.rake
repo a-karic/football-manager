@@ -5,13 +5,14 @@ namespace :football_clubs do
     file = File.read('clubs.json')
     clubs = JSON.parse file
     leagues.each_with_index do |league, index|
-      16.times do
+      10.times do
         club = clubs.sample
         league.clubs.create!(
           name: club['name'],
           key: club['key'],
           code: club['code']
         )
+        puts "Created club #{club['name']}"
       end
     end
   end

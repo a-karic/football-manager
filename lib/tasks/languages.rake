@@ -7,7 +7,8 @@ namespace :languages do
       code = lang[0]
       name = lang[1]['name']
       native_name = lang[1]['nativeName']
-      Language.create!(code: code, name: name, native_name: native_name)
+      language = Language.create!(code: code, name: name, native_name: native_name)
+      puts "Created language #{language.name}"
     end
   end
 

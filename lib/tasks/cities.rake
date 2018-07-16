@@ -13,19 +13,8 @@ namespace :cities do
           lat:city['lat'],
           lng:city['lng']
         )
+        puts "Created city #{city['name']}"
       end
     end
-
-
-    # cities.each do |city|
-    #   country = Country.find_by(alpha2: city['country'])
-    #   next unless country
-    #   City.create!(
-    #     country: country,
-    #     name: city['name'],
-    #     lat:city['lat'],
-    #     lng:city['lng']
-    #   )
-    # end
   end
 end

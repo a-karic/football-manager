@@ -41,10 +41,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "#{secure_token(10)}.#{file.extension}" if original_filename.present?
   end
 
-  def store_dir
-    "images/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
-
   protected
   def secure_token(length=16)
     var = :"@#{mounted_as}_secure_token"

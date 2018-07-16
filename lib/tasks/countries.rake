@@ -4,14 +4,17 @@ namespace :countries do
     file = File.read('countries.json')
     countries = JSON.parse file
     countries.each do |country|
-      Country.create!(
+      created_country = Country.create!(
         name: country['name'],
         alpha2: country['alpha2'],
         alpha3: country['alpha3'],
         numeric: country['numeric']
       )
+      puts "Created country #{created_country}"
+      break if Country.count > 10
     end
   end
+
   desc "Update countries"
   task update_countries: :environment do
     file = File.read('countries-more.json')
@@ -21,6 +24,7 @@ namespace :countries do
       next unless country
       new_attrs = data[1].to_h
       country.update(new_attrs.except('continent', 'currency'))
+      puts "Update country #{country.name}"
     end
   end
 

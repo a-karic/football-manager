@@ -9,7 +9,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'puma', '~> 3.7'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'slim'
 gem 'turbolinks', '~> 5'
@@ -19,6 +19,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+gem "pg"
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

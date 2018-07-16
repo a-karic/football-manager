@@ -5,9 +5,11 @@ namespace :currencies do
     currencies = JSON.parse file
     currencies.each do |element|
       currency_params = element.second
-      Currency.create!(currency_params)
+      curr = Currency.create!(currency_params)
+      puts "Created currency #{curr.name}"
     end
   end
+
   desc "Create rates"
   task create_rate: :environment do
     file = File.read('euro-rate.json')
@@ -16,8 +18,10 @@ namespace :currencies do
       currency = Currency.find_by(code: object['code'])
       next unless currency
       currency.update(rate: object['rate'])
+      puts "Updated currency #{currency.name}"
     end
   end
+
   desc "Connect countries and currencies"
   task add_to_countries: :environment do
     file = File.read('countries-currencies.json')
@@ -27,6 +31,7 @@ namespace :currencies do
       currency = Currency.find_by(code: countries_currencies[country.alpha2])
       next unless currency
       country.update(currency: currency)
+      puts "Connected currency #{currency.name} with country #{country.name}"
     end
   end
 

@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519224408) do
+ActiveRecord::Schema.define(version: 2018_05_19_224408) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 20180519224408) do
   end
 
   create_table "cities", force: :cascade do |t|
-    t.integer "country_id"
+    t.bigint "country_id"
     t.string "name"
     t.integer "weather", default: 0
     t.float "lat"
@@ -94,7 +97,7 @@ ActiveRecord::Schema.define(version: 20180519224408) do
 
   create_table "football_leagues", force: :cascade do |t|
     t.string "name"
-    t.integer "country_id"
+    t.bigint "country_id"
     t.integer "rank", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -126,13 +129,13 @@ ActiveRecord::Schema.define(version: 20180519224408) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "first_name"
     t.string "last_name"
     t.string "photo"
     t.date "birth_date"
-    t.integer "language_id"
-    t.integer "country_id"
+    t.bigint "language_id"
+    t.bigint "country_id"
     t.integer "city_id"
     t.integer "role", default: 0
     t.integer "status", default: 0
@@ -160,4 +163,7 @@ ActiveRecord::Schema.define(version: 20180519224408) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "football_leagues", "countries"
+  add_foreign_key "profiles", "countries"
+  add_foreign_key "profiles", "languages"
 end
